@@ -33,9 +33,5 @@
         <li>Cross-platform support for macOS and Linux.</li>
         <li>Enhanced GUI with drag-and-drop functionality for loading files.</li>
     </ul>
-    <h2>💻 Contributions</h2>
-    <p>
-        Contributions are welcome! If you have ideas or want to help improve EchoPlayer, please open an issue or submit a pull request.
-    </p>
 </body>
 </html>
