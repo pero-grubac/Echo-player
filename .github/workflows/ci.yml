@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+    paths-ignore:
+      - '**.md'
+      - 'readme_assets/**'
+      - 'samples/**'
+      - 'LICENSE*'
+      - '.gitignore'
+      - '.editorconfig'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'readme_assets/**'
+      - 'samples/**'
+      - 'LICENSE*'
+      - '.gitignore'
+      - '.editorconfig'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: windows-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+
+      - name: Restore
+        run: dotnet restore EchoPlayer.slnx
+
+      - name: Build
+        run: dotnet build EchoPlayer.slnx --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test EchoPlayer.slnx --configuration Release --no-build --logger trx --results-directory TestResults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults
+          retention-days: 7
+
+      - name: Publish the app
+        run: dotnet publish src/EchoPlayer.Desktop --configuration Release --runtime win-x64 --self-contained -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true --output publish
+
+      - name: Upload the app
+        uses: actions/upload-artifact@v4
+        with:
+          name: EchoPlayer-win-x64
+          path: publish/EchoPlayer.exe
+          retention-days: 14

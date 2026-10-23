@@ -1,0 +1,63 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+artifacts/
+publish/
+*.wpftmp.csproj
+*_wpftmp.csproj
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.rsuser
+*.DotSettings.user
+launchSettings.json
+
+# Tests and coverage
+[Tt]est[Rr]esults/
+coverage/
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+*.trx
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# Operating system
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Processed audio and local data
+*_echo.wav
+*_echo (*).wav
+.env

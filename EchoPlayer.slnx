@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/EchoPlayer.Core/EchoPlayer.Core.csproj" />
+    <Project Path="src/EchoPlayer.Desktop/EchoPlayer.Desktop.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EchoPlayer.Core.Tests/EchoPlayer.Core.Tests.csproj" />
+  </Folder>
+</Solution>

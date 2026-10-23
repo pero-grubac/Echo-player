@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>EchoPlayer.Desktop</RootNamespace>
+    <AssemblyName>EchoPlayer</AssemblyName>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <!-- ThemeMode (the Fluent theme) is marked experimental in WPF. -->
+    <NoWarn>$(NoWarn);WPF0001</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="NAudio.WinMM" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EchoPlayer.Core\EchoPlayer.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+  </ItemGroup>
+
+</Project>
