@@ -13,7 +13,7 @@
 
 **Add a feedback echo to WAV recordings: hear it live while you shape it, see every repeat in the waveform, then write any number of files at once.**
 
-<img src="readme_assets/demo.gif" alt="Echo Player demo: playing a recording, switching to the Hall preset and dragging the delay while it plays, picking a second file, and processing both" width="900">
+<img src="readme_assets/demo.gif" alt="Echo Player demo: playing a recording, switching to the Hall preset and dragging the delay while it plays, switching the echo off and on, then processing the file" width="900">
 
 </div>
 
